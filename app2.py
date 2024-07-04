@@ -3,7 +3,6 @@ from google.colab import output
 import time
 #                       0.   1.    2.
 pedra_papel_tesoura = ['🗿', '📄', '✁']
-maquina = random.choice(pedra_papel_tesoura)
 placar = {'player':0, 'maquina':0}
 # Mapeamento das combinações vencedoras
 vitorias = {
@@ -15,8 +14,9 @@ vitorias = {
 # mensagens iniciais
 while True:
   output.clear()
-  print('Bem vindo ao jogo de Pedra, Papel e Tesoura!')
-  print(f'Placar: {placar["player"]} - {placar["maquina"]}')
+  maquina = random.choice(pedra_papel_tesoura)
+  print('*** Bem vindo ao jogo de Pedra, Papel e Tesoura! ***')
+  print(f'\nPlacar: {placar["player"]} - {placar["maquina"]}')
   print('\nEscolha uma opção:')
   print('1 - Pedra    🗿')
   print('2 - Papel    📄')
@@ -42,4 +42,5 @@ while True:
       placar["maquina"] += 1
 
   print(f"{player} vs {maquina} >>> {resultado}")
-  time.sleep(3)
+  input('Pressione enter para continuar...')
+  time.sleep(1)
